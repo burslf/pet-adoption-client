@@ -1,0 +1,90 @@
+.profile-page-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 50px !important
+}
+
+.profile-page-container form {
+    width: 100%;
+}
+
+.profile-picture {
+    border: 2px solid #000000;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-weight: 600;
+}
+.profile-page-container input, .profile-page-container textarea{
+    width: 100%;
+    background-color: transparent;
+    color: #000000;
+    font-weight: 600;
+    transition: background-color 0.3s ease-out, border-color 0.3s ease-in;
+    font-size: 20px;
+    border:2px solid #000000;
+    resize: none;
+}
+.profile-page-container input:disabled, .profile-page-container textarea:disabled {
+    transition: background-color 0.3s ease-in  border-color 0.3s ease-in;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.profile-page-container label {
+    margin-left: 5px;
+    color:#000000;
+    border-bottom:1px solid #000000;
+    padding: 3px 7px;
+    text-align: center;
+}
+.profile-page-container div {
+    margin: 5px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.profile-page-container form {
+    border: 2px solid #000000;
+    border-radius: 20px;
+    padding: 5px;
+}
+.profile-page-container input, .profile-page-container textarea{
+    margin: 0px;
+}
+.password-div input{
+    margin: 5px 0px;
+}
+.edit-btn, .save-btn {
+    margin:0px auto!important;
+    padding: 5px 30px;
+    /* right: 20vw; */
+    background-color: #000000;
+    z-index: 1;
+}
+.edit-save-div {
+    width: 100%;
+    position: fixed;
+    top: 70px;
+    background-color: #ffeedc;
+}
+
+@media only screen and (max-width: 560px) {
+
+    .edit-save-div {
+        width: 100%;
+        position: fixed;
+        top: 70px;
+        background-color: #ffeedc;
+    }
+}

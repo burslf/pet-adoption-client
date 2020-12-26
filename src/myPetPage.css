@@ -1,0 +1,124 @@
+.my-pet-page p{
+    color :white;
+    font-size: 20px
+}
+
+.pets-container {
+    margin-bottom: 12vh;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 20vw);
+    row-gap: 20px;
+    z-index: 0;
+}
+.pet-card {
+    color: #ffeedc;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    align-items: center;
+    border: 1px solid transparent;
+    width: 180px;
+    border-radius: 9px;
+    background-color: #57949a;
+    justify-self: center;
+}
+
+.pet-card a {
+    margin-top: 7px;
+    color: #4d4d4d;
+    background-color: #ffeedc;
+    padding: 5px;
+    border: 1px solid #ffeedc;
+    border-radius: 30px;
+}
+
+.pet-card a:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+.pet-pic-container {
+    width: 140px;
+    height: 140px;
+}
+.pet-picture {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(107, 137, 165);
+    border-radius: 50%;
+}
+
+.pets-navbar {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    /* margin-top: 40px !important; */
+    background-color: #ffeedc;
+    position: fixed;
+    left: 8px;
+    /* top: 30%; */
+    /* transform: translateY(-100%); */
+    z-index: 1;
+    /* bottom: 20px; */
+    /* border-radius: 40px; */
+    /* position: fixed; */
+}
+
+.pets-navbar ul {
+    margin-top: 4px;
+    margin-bottom: 0px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    list-style: none;
+}
+.pets-navbar li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0px;
+} 
+.pets-navbar div {
+    color: #4f4f4f
+}
+@media only screen and (max-width: 1175px) {
+    .pets-container {
+        grid-template-columns: repeat(3, 28vw);
+    }
+}
+
+@media only screen and (max-width: 875px) {
+    .pet-card {
+        width: 165px;
+    }
+    .pets-container {
+        grid-template-columns: repeat(3, 30vw);
+    }
+}
+
+@media only screen and (max-width: 635px) {
+    .pet-card {
+        width: 180px;
+    }
+    .pets-container {
+        grid-template-columns: repeat(2, 38vw);
+    }
+}
+@media only screen and (max-width: 560px) {
+    .pets-navbar {
+        top: 75px;
+    }
+}
+@media only screen and (max-width: 510px) {
+    .pet-card {
+        width: 250px;
+    }
+    .pets-container {
+        grid-template-columns: repeat(1, 40vw);
+    }
+}
+

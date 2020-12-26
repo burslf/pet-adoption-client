@@ -1,0 +1,54 @@
+.pet-page-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    color: #ffeedc;
+    font-size: 18px;
+    margin: 0 auto;
+    max-width: 600px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: #57949a;
+}
+
+.pet-page-picture {
+    margin-top: 20px !important;
+    margin: 0 auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 1px solid #ffeedc
+}
+
+.pet-page-button {
+    background-color: #ffeedc;
+    color: #605f5d;
+    border-radius: 40px;
+    padding: 5px 20px;
+}
+
+.pet-page-button:hover {
+    background-color: #ffeedc;
+    color: #605f5d;
+    opacity: 0.85;
+}
+
+.infos-table{
+    width: 100%;
+    border: none !important;
+    width: 80%;
+    text-align: center;
+    margin-top: 20px;
+}
+.infos-table td {
+    border: none !important;
+}
+.name-info {
+    color: #262626;
+}
+
+.name-value {
+    text-decoration: underline;
+    color: #ffeedc;
+    font-weight: 500;
+}
