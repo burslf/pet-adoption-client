@@ -12,7 +12,7 @@ const UserProfile = (props) => {
     const [isEditable, setIsEditable] = useState(true)
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/user/${currentPath}`, {
+        axios.get(`https://yoyo-pet-adoption.herokuapp.com/user/${currentPath}`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -29,7 +29,7 @@ const UserProfile = (props) => {
     const saveInfos = () => {
         const newInfos = user
         console.log(newInfos)
-        axios.post(`http://localhost:5000/user/${currentPath}`, newInfos)
+        axios.post(`https://yoyo-pet-adoption.herokuapp.com/user/${currentPath}`, newInfos)
         .then(res => console.log(res.data))
         .catch(err => console.log(err))
         setIsEditable(!isEditable)

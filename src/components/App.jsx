@@ -32,7 +32,7 @@ const login = async (e) => {
   const email = e.target.email.value
   const password = e.target.password.value
   const infos = {email, password}
-  await axios.post('http://localhost:5000/login', infos)
+  await axios.post('https://yoyo-pet-adoption.herokuapp.com/login', infos)
   .then(response => {
     if (response.status === 200) {
           setisLogged(true)

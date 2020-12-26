@@ -15,7 +15,7 @@ const Pet = (props) => {
 
     const adopt = () => {
         const response = {status: 'Adopted', userId: localStorage.getItem('id')}
-        axios.post(`http://localhost:5000/pet/${currentPath}/adopt`, response)
+        axios.post(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}/adopt`, response)
         .then(res => {
             setIsOwned(localStorage.getItem('id'))
             console.log(res)
@@ -24,7 +24,7 @@ const Pet = (props) => {
     }
     const foster = () => {
         const response = {status: 'Fostered', userId: localStorage.getItem('id')}
-        axios.post(`http://localhost:5000/pet/${currentPath}/foster`, response)
+        axios.post(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}/foster`, response)
         .then(res => {
             setIsOwned(localStorage.getItem('id'))
             console.log(res)
@@ -33,7 +33,7 @@ const Pet = (props) => {
     }
     const returnPet = () => {
         const response = {userId: localStorage.getItem('id')}
-        axios.post(`http://localhost:5000/pet/${currentPath}/return`, response)
+        axios.post(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}/return`, response)
         .then(res => {
             console.log(res)
             setIsOwned('')
@@ -43,7 +43,7 @@ const Pet = (props) => {
 
     const savePet =  () => {
         const response = {userId: localStorage.getItem('id')}
-         axios.post(`http://localhost:5000/pet/${currentPath}/save`, response)
+         axios.post(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}/save`, response)
         .then(res => {
             setIsSaved(true)
             console.log(res)
@@ -52,7 +52,7 @@ const Pet = (props) => {
 
     const unsavePet = async () => {
         const response = {userId: localStorage.getItem('id')}
-        await axios.post(`http://localhost:5000/pet/${currentPath}/unsave`, response)
+        await axios.post(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}/unsave`, response)
         .then(res => {
             setIsSaved(false)
             console.log(res.data)
@@ -64,12 +64,12 @@ const Pet = (props) => {
             if(localStorage.getItem('id')) {
                 setIsLogged(true)
             }
-            axios.get(`http://localhost:5000/pet/${currentPath}`)
+            axios.get(`https://yoyo-pet-adoption.herokuapp.com/pet/${currentPath}`)
             .then(res=>{
                 setPetInfo(res.data[0])
                 setIsOwned(res.data[0].owner)
             })
-            axios.get(`http://localhost:5000/user/${localStorage.getItem('id')}`, {headers : {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
+            axios.get(`https://yoyo-pet-adoption.herokuapp.com/user/${localStorage.getItem('id')}`, {headers : {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
             .then(res => {
                 if(res.data.saved.some(e => e._id === currentPath)) {
                     setIsSaved(true)

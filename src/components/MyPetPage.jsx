@@ -10,9 +10,9 @@ const MyPetPage = (props) => {
     const [currSection, setCurrSection] = useState('all')
 
     useEffect(() => {
-        axios.get('http://localhost:5000/pet')
+        axios.get('https://yoyo-pet-adoption.herokuapp.com/pet')
         .then(res => setAllPets(res.data))        
-        axios.get(`http://localhost:5000/user/${localStorage.getItem('id')}`, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
+        axios.get(`https://yoyo-pet-adoption.herokuapp.com/user/${localStorage.getItem('id')}`, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
             .then(res => {
                 setOwnedPets(res.data.owns)
                 setSavedPets(res.data.saved)

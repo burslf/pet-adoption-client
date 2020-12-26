@@ -45,7 +45,7 @@ const Signup = (props) => {
         const confirmPassword = e.target.confirmPassword.value
         if(password === confirmPassword) {
             const infos = {firstname, lastname, email, phone, password}
-            axios.post('http://localhost:5000/signup', infos)
+            axios.post('https://yoyo-pet-adoption.herokuapp.com/signup', infos)
                 .then(response => console.log(response.data))
                 .catch(err => console.log(err))
         } else {

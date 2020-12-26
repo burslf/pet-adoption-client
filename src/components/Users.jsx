@@ -6,7 +6,7 @@ const Users = (props) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/users", {
+      .get("https://yoyo-pet-adoption.herokuapp.com/users", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}`},
       })
       .then((res) => setusers(res.data))

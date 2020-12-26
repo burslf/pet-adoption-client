@@ -14,7 +14,7 @@ const Pet = (props) => {
             data: petInfo, 
             isAdmin:localStorage.getItem("token") 
         }
-        axios.post('http://localhost:5000/pet', infos )
+        axios.post('https://yoyo-pet-adoption.herokuapp.com/pet', infos )
             .then(response => console.log(response.data))
             .catch(err => console.log(err))
     }
@@ -24,7 +24,7 @@ const Pet = (props) => {
     }
     useEffect(() => {
         async function fetchData () {
-            await axios.get(`http://localhost:5000/user/${localStorage.getItem('id')}`, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
+            await axios.get(`https://yoyo-pet-adoption.herokuapp.com/user/${localStorage.getItem('id')}`, {headers: {"Authorization" : `Bearer ${localStorage.getItem('token')}`}})
             .then(res => setIsAdmin({status: res.data.isAdmin}))
             .catch(err => {
                 setIsAdmin({status: false})
