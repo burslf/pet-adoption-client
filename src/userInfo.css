@@ -1,0 +1,56 @@
+.user-info-container {
+    width: 95%;
+    padding: 0;
+    max-width: 420px;
+    border-radius: 9px;
+    border: 2px solid #ffeedc;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    color: #4a4a4a;
+    margin: 20px auto;
+    font-weight: 500;
+    font-size: 16px;
+}
+.user-info-container li {
+    word-break: break-all;
+    margin: 4px;
+    background-color: #ffeedc;
+    border: 1px solid #ffeedc;
+    border-radius: 9px;
+    padding: 2px 4px;
+    list-style: none;
+}
+.list-pet-container {
+    word-break: break-all;
+    padding: 3px 0px;
+    color: #4a4a4a;
+    display: flex;
+    flex-direction: column;
+    margin: 6px;
+    align-items: center;
+    border: 1px solid #ffeedc;
+    border-radius: 9px;
+    background-color: #ffeedc;
+    justify-self: center;
+    font-size: 15px;
+}
+.list-pet-container div {
+    width: 100%;
+    font-size: 17px;
+    font-weight: 500;
+}
+.list-pet-container span {
+    font-weight: 400;
+}
+.list-pet-container:hover {
+    color: #4a4a4a;
+    text-decoration: none;
+    background-color: #ffeedcd4
+}
+.list-pet-container img {
+    width: 40px;
+    height: 40px;
+    margin: 0px 10px;
+    border-radius: 50%;
+}

@@ -10,9 +10,13 @@ import MyPetPage from "./MyPetPage";
 import Pet from "./Pet";
 import { useEffect, useState } from 'react'
 import UserProfile from "./UserProfile";
+import UserInfo from "./UserInfo";
+import AllPets from "./AllPets";
 
 function App() {
   const [isLogged, setisLogged] = useState(false)
+  const [isAdmin, setIsAdmin] = useState(false)
+  const [showError, setShowError] = useState({incorrectPassword : false})
 
   useEffect(() => {
       if (localStorage.getItem('token')) {
@@ -20,10 +24,11 @@ function App() {
       } else {
           setisLogged(false)
       }
-  }, [])
+  })
 
   const logout = () => {
     localStorage.clear()
+    setIsAdmin(false)
     setisLogged(false)
 }
 
@@ -35,12 +40,24 @@ const login = async (e) => {
   await axios.post('https://yoyo-pet-adoption.herokuapp.com/login', infos)
   .then(response => {
     if (response.status === 200) {
-          setisLogged(true)
-          localStorage.setItem('token', response.data.accessToken)
-          localStorage.setItem('id', response.data.id)
+      setisLogged(true)
+      localStorage.setItem('token', response.data.accessToken)
+      localStorage.setItem('id', response.data.id)
+      if(response.data.isAdmin == true) {
+        setIsAdmin(true)
       }
+      console.log(response.data)
+         
+     }
+      return response.status == 200
   })
-  .catch(err => console.log(err))
+  .catch(err => {
+    setShowError({...showError, incorrectPassword : true})
+    setTimeout(() => {
+    setShowError({...showError, incorrectPassword : false})
+    }, 2000);
+    return err.response.status
+  })
 }
 
   return (
@@ -66,11 +83,17 @@ const login = async (e) => {
         <Route path='/users'>
           <Users />
         </Route>
+        <Route path='/user/:id'>
+          <UserInfo />
+        </Route>
+        <Route path='/all-pets'>
+          <AllPets />
+        </Route>
         <Route path='/profile/:id'>
-          <UserProfile />
+          <UserProfile isAdmin={isAdmin}/>
         </Route>
         <Route path='/'>
-          <Homepage isLogged={isLogged} logout={logout} login={login} />
+          <Homepage isLogged={isLogged} isAdmin={isAdmin} logout={logout} login={login} showError={showError}/>
         </Route>
       </Switch>
       </div>

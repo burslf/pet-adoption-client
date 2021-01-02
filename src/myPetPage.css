@@ -93,14 +93,14 @@
 
 @media only screen and (max-width: 875px) {
     .pet-card {
-        width: 165px;
+        width: 180px;
     }
     .pets-container {
-        grid-template-columns: repeat(3, 30vw);
+        grid-template-columns: repeat(3, 27vw);
     }
 }
 
-@media only screen and (max-width: 635px) {
+@media only screen and (max-width: 720px) {
     .pet-card {
         width: 180px;
     }
@@ -115,10 +115,10 @@
 }
 @media only screen and (max-width: 510px) {
     .pet-card {
-        width: 250px;
+        min-width: 190px;
     }
     .pets-container {
-        grid-template-columns: repeat(1, 40vw);
+        grid-template-columns: repeat(1, 38vw);
     }
 }
 

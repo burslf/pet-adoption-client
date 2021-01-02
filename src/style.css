@@ -1,9 +1,4 @@
 body {
-    /* background: #5f2c82; 
-        background: -webkit-linear-gradient(to right, #49a09d, #5f2c82);  
-        background: linear-gradient(to right, #49a09d, #5f2c82); 
-    */
-    color: #fddab6 !important;
     background-color: #ffeedc;                        
 }
 
@@ -11,8 +6,29 @@ body {
     padding: 12vh 25px;
 }
 
+.dashboard-button{
+    margin: 80px auto;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #4f4f4f;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #57949a;
+    color: #ffeedc;
+    cursor: pointer;
+    transition: 0.25s ease-in;
+}
+.dashboard-button:hover {
+    background-color: #ffeedc;
+    color: #57949a;
+}
+
 .header-logged-in {
-    margin-top: 20px;
+    margin: auto 0;
     color: #4f4f4f;
     text-align: center;
 }
@@ -43,7 +59,7 @@ body {
 .form input, .form textarea {
     font-size: 18px;
     font-weight: 600;
-    border: 2px solid transparent;
+    border: none;
     margin: 5px;
     width: 75%;
     box-shadow: none;
@@ -56,6 +72,27 @@ body {
     border: none !important;
     box-shadow: none;
 } 
+.form select {
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+.form select:focus {
+    box-shadow: none;
+}
+.file-input {
+    cursor: pointer;
+    height: 60px;
+    border-radius: 0.25rem;
+    width: 60px;
+    max-width: 600px;
+    margin: 5px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
 .sign-up-area {
     display: flex;
     flex-direction: column;
@@ -73,9 +110,26 @@ body {
 }
 
 .user-list {
+    padding: 7px;
+    border: 2px solid #ffeedc;
+    background-color: #ffeedc;
+    color: #4a4a4a;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 15px;
+    font-weight: 500;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-break: break-all;
 }
 
+.user-list:hover{
+    background-color: #ffeedcdc;
+    text-decoration: none;
+    color: #4a4a4a
+}
 
 .search-input {
     display: flex;
